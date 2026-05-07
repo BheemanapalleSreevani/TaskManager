@@ -64,10 +64,7 @@ app.use('/api/projects', require('./routes/projectRoutes'));
 app.use('/api/tasks', require('./routes/taskRoutes'));
 app.use('/api/admin', require('./routes/adminRoutes'));
 
-// 404 handler
-app.use('/{*any}', (req, res) => {
-  res.status(404).json({ success: false, message: 'Route not found.' });
-});
+
 
 // Global error handler
 app.use((err, req, res, next) => {
