@@ -11,16 +11,16 @@ connectDB();
 const app = express();
 const server = http.createServer(app);
 
+const corsOptions = {
+  origin: function (origin, callback) {
+    callback(null, true);
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+};
+
 const io = new Server(server, {
-  cors: {
-    origin: [
-  'http://localhost:5173',
-  'http://localhost:3000',
-  'https://taskmanager-1-wcen.onrender.com'
-],
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-  }
+  cors: corsOptions
 });
 
 app.set('io', io);
@@ -44,14 +44,7 @@ io.on('connection', (socket) => {
 });
 
 // Middleware
-app.use(cors({
-  origin: [
-  'http://localhost:5173',
-  'http://localhost:3000',
-  'https://taskmanager-1-wcen.onrender.com'
-],
-  credentials: true,
-}));
+app.use(cors(corsOptions));
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 

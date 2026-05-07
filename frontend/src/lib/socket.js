@@ -1,7 +1,7 @@
 import { io } from 'socket.io-client';
 
 // Get backend URL
-const backendUrl = import.meta.env.VITE_API_URL?.replace('/api', '') || 'http://localhost:5000';
+const backendUrl = import.meta.env.VITE_API_URL?.replace('/api', '') || 'https://taskmanager-ecwq.onrender.com';
 
 export const socket = io(backendUrl, {
   autoConnect: false,
