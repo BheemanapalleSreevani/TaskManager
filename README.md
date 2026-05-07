@@ -9,6 +9,17 @@ A **production-grade full-stack Team Task Management** web application inspired 
 
 ---
 
+
+🌐 Live Demo
+🚀 Frontend
+
+https://taskmanager-1-y57u.onrender.com
+
+⚙️ Backend API
+
+https://taskmanager-ecwq.onrender.com
+
+
 ## ✨ Features
 
 ### 🔐 Authentication
