@@ -53,6 +53,12 @@ app.get('/api/health', (req, res) => {
 });
 
 // Routes
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "TaskFlow Backend API Running Successfully 🚀"
+  });
+});
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/projects', require('./routes/projectRoutes'));
 app.use('/api/tasks', require('./routes/taskRoutes'));
